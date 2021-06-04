@@ -116,4 +116,5 @@ public class HomeWork1 {
         int randomValueInt = (int)randomValueDouble;
         System.out.println("Your random number is " + randomValueInt);
     }
+    //some changes
 }
