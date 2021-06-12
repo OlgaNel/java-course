@@ -20,6 +20,12 @@ public class HomeWork3 {
             case 4:
                 task4(args);
                 break;
+            case 5:
+                task5(args);
+                break;
+            case 6:
+                task6(args);
+                break;
             default:
                 System.out.println("Wrong task.");
         }
@@ -45,7 +51,7 @@ public class HomeWork3 {
 
     public static void task3(String[] args) {
         int[] arr = {1, 2, 3, 4, 5};
-        for (int i = arr.length - 1; i >= 0 ; i--) {
+        for (int i = arr.length - 1; i >= 0; i--) {
             System.out.println(arr[i]);
         }
     }
@@ -58,4 +64,45 @@ public class HomeWork3 {
         }
         System.out.println(sum);
     }
+
+    public static void task5(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter height");
+        int height = in.nextInt();
+        System.out.println("Enter width");
+        int width = in.nextInt();
+
+        int i = 0;
+        while (i < height) {
+            int j = 1;
+            for (; j <= width; j++) {
+                System.out.print("#");
+            }
+            System.out.println("");
+            i++;
+        }
+        System.out.println();
+    }
+
+    public static void task6(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter password");
+        int expectedPassword = 123;
+        int numberOfRetries = 2;
+        int password = in.nextInt();
+        int i = 0;
+
+        while ((password != expectedPassword) && (i != numberOfRetries)) {
+            System.out.println("Incorrect.");
+            password = in.nextInt();
+            i++;
+        }
+        if ((password == expectedPassword) && (i <= numberOfRetries)) {
+            System.out.println("Correct.");
+        } else {
+            System.out.println("Lock.");
+        }
+    }
+
+
 }
