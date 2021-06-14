@@ -4,14 +4,33 @@ import java.util.Scanner;
 
 public class HomeWork1 {
     public static void main(String[] args) {
-        HomeWork1.task1(args);
-        HomeWork1.task2(args);
-        HomeWork1.task3(args);
-        HomeWork1.task4(args);
-        HomeWork1.task5(args);
-    }
+        Scanner in = new Scanner(System.in);
+        System.out.println("Which task do you want?");
+        int task = in.nextInt();
 
-    public static void task1(String[] args){
+        switch (task) {
+            case 1:
+                task1(args);
+                break;
+            case 2:
+                task2(args);
+                break;
+            case 3:
+                task3(args);
+                break;
+            case 4:
+                task4(args);
+                break;
+            case 5:
+                task5(args);
+                break;
+            default:
+                System.out.println("wrong task");
+        }
+
+
+    }
+    public static void task1 (String[]args){
         Scanner in = new Scanner(System.in);
         System.out.println("Provide number in inches and press enter.");
         String numInInchString = in.nextLine();
@@ -23,7 +42,7 @@ public class HomeWork1 {
         System.out.println("Number in meters is " + numInMeter);
     }
 
-    public static void task2(String[] args){
+    public static void task2 (String[]args){
         Scanner in = new Scanner(System.in);
         System.out.println("Provide the number of minutes and press enter.");
         String minutesString = in.nextLine();
@@ -43,7 +62,7 @@ public class HomeWork1 {
 
     }
 
-    public static void task3(String[] args){
+    public static void task3 (String[]args){
         Scanner in = new Scanner(System.in);
         System.out.println("Provide your weight in pounds and press enter.");
         String weightString = in.nextLine();
@@ -61,7 +80,7 @@ public class HomeWork1 {
 
     }
 
-    public static void task4(String[] args){
+    public static void task4 (String[]args){
         Scanner in = new Scanner(System.in);
         System.out.println("Provide distance in meters.");
         String distanceInMetersString = in.nextLine();
@@ -87,7 +106,7 @@ public class HomeWork1 {
         float distanceInKilometers = distanceInMeters / 1000f; //2.5
         float minsToHour = mins / 60f; //0.93333
         float secondsToMins = seconds / 60f;
-        float secondsToHour = secondsToMins/60;//0.38333
+        float secondsToHour = secondsToMins / 60;//0.38333
 
         //calculate metersPerSecond and kilometersPerHour
         float metersPerSecond = distanceInMeters / (hoursToSeconds + minsInSeconds + seconds);
@@ -98,7 +117,7 @@ public class HomeWork1 {
 
     }
 
-    public static void task5(String[] args){
+    public static void task5 (String[]args){
         Scanner in = new Scanner(System.in);
         System.out.println("Provide min value.");
         String minValueString = in.nextLine();
@@ -108,12 +127,12 @@ public class HomeWork1 {
         String maxValueString = in.nextLine();
         int maxValue = Integer.parseInt(maxValueString);
         //check if min greater than max
-        if ( minValue > maxValue) {
+        if (minValue > maxValue) {
             System.out.println("Min value should be greater than max value.");
         }
 
         double randomValueDouble = ((Math.random() * (maxValue - minValue)) + minValue);
-        int randomValueInt = (int)randomValueDouble;
+        int randomValueInt = (int) randomValueDouble;
         System.out.println("Your random number is " + randomValueInt);
     }
     //some changes
